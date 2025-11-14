@@ -5,6 +5,8 @@ import { defineConfig, loadEnv } from 'vite';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
+      // Use relative base so built assets work when served from different hosts/paths
+      base: './',
       server: {
         port: 3000,
         host: '0.0.0.0',
